@@ -1,6 +1,8 @@
 const express = require('express');
 require('dotenv').config();
 const authMiddleware = require('./middleware/authentication');
+const cors = require('cors');
+app.use(cors()); 
 
 const app = express(); 
 

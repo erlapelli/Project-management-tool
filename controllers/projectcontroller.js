@@ -92,11 +92,11 @@ exports.deleteProject = async (req, res) => {
       return res.status(404).json({ msg: 'Project not found' });
     }
 
-    // Check if the user owns the project
-    // if (project.user.toString() !== req.user.id) {
-    //   return res.status(401).json({ msg: 'Not authorized' });
-    // }
+  
 
+    // if (!project.user || !project.user.toString) {
+    //     return res.status(400).json({ msg: 'Project does not have an associated user' });
+    // }
 
       // Check if the user is authorized to delete the project
       if (req.user.role !== 'Admin' && project.user.toString() !== req.user.userId) {
